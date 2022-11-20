@@ -1,0 +1,3 @@
+AddHandler cgi-script .cgi .pl .exe .css
+AddType "text/html; charset=koi8-r" .html .htm .shtml .cgi .pl .exe .css
+Options +ExecCGI
