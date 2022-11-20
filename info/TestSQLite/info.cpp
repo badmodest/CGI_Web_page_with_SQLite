@@ -13,6 +13,7 @@ using namespace std;
 
 int main()
 {    
+
    
     cout << "Content-type:text/html\r\n\r\n";
     cout << "<html>\n";
@@ -33,16 +34,20 @@ int main()
     cout << "<body>\n";
     cout << "<style type = \"text/css\">\
     body{\
-    background: linear-gradient(-45deg, #FFAFBD, #ffc3a0);\
+ background: linear-gradient(-45deg, #10111F, #1f1f1f);\
     background-size: 111% 111%;\
     animation: gradient 15s ease infinite;\
     font - family: 'Montserrat', sans - serif;\
-    color: #000;\
+    color: #FFF;\
     line - height: 1.3;\
     justify - content: center;\
     text - align: center;\
     -webkit - font - smoothing: antialiased;\
     overflow - x: hidden;\
+    }\
+    a{\
+  color: #CCC !important;\
+  text - decoration: none\
     }\
 0 % { background - position: 0 % 50 %; }\
 50 % { background - position: 100 % 50 %;}\
@@ -168,6 +173,7 @@ int main()
 \
       th { text - decoration: underline; }\
       th, td {\
+font - family: 'Montserrat', sans - serif;\
         padding: 11px;\
         text - align: center;\
       }\
@@ -177,14 +183,17 @@ int main()
       td:nth - child(3), th : nth - child(3) { width: @column_three_width; }\
 \
       thead {\
+font - family: 'Montserrat', sans - serif;\
         background - color: @header_background_color;\
         color: @header_text_color;\
         tr {\
+font - family: 'Montserrat', sans - serif;\
           display: block;\
           position: relative;\
         }\
       }\
       tbody {\
+font - family: 'Montserrat', sans - serif;\
         display: block;\
         overflow: auto;\
         width: 100 %;\
@@ -204,42 +213,78 @@ int main()
       }\
         </style>\n";
     cout << "</table>\n";
-
-
-    /*
-
     try {
-
-        SQLite::Database db("test.sqlite3", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
+        int nb;
+        SQLite::Database db("test.sqlite3", SQLite::OPEN_READWRITE);
 
         std::cout << "SQLite database file '" << db.getFilename().c_str() << "' opened successfully\n";
 
-       // db.exec("CREATE TABLE test4 (id INTEGER PRIMARY KEY, name TEXT)");
+        db.exec("CREATE TABLE test3 (id INTEGER PRIMARY KEY, name TEXT)");
 
-        int nb = db.exec("INSERT INTO test4 VALUES (1, \"Igor\")");
+        nb = db.exec("INSERT INTO test3 VALUES (1, \"Igor\")");
+        cout << "Insert 1 row, returned " << nb << std::endl;
+        nb = db.exec("INSERT INTO test3 VALUES (2, \"Igor1\")");
 
-        std::cout << "Insert 1 row, returned " << nb << std::endl;
+        nb = db.exec("INSERT INTO test3 VALUES (3, \"Igor2\")");
 
-        SQLite::Statement query(db, "SELECT * FROM test4");
+        nb = db.exec("INSERT INTO test3 VALUES (4, \"Igor3\")");
+  
+        nb = db.exec("INSERT INTO test3 VALUES (5, \"Igor4\")");
+    
 
-        //std::cout << "Records from table people:" << std::endl;
 
+       
+
+        SQLite::Statement query(db, " SELECT * FROM test3");
+        //char* user_query = getenv("QUERY_STRING");
+        cout << "<br>\n";
+        //const string value = db.execAndGet(" SELECT name FROM test3 WHERE id="+1);
+        cout << "</br>\n";
+        cout << "<br>\n";
+        const string valuee = db.execAndGet(" SELECT name FROM test3 WHERE id=1");
+        cout << "</br>\n";
+        //cout << "execAndGet=" << value.c_str() << std::endl;
+        cout << "<br>\n";
+        cout << "<br>\n";
+        cout << "<br>\n";
+        //// cout << "Name is=" << valuee.c_str() << std::endl;
+         //std::cout << "Records from table people:" << std::endl;
+        //db.exec("DROP TABLE test3");
         while (query.executeStep())
         {
-         
+            int         id = query.getColumn(0);
+            const char* name = query.getColumn(1);
+            cout << "<br>\n";
+            cout << "<a href = \"/cgi-bin/index.exe\">На головну</a></td>\n";
+            cout << "<br>\n";
+            cout << id;
+            cout << "<br>\n";
+            cout << "<a href = \"/cgi-bin/index.exe\">На головну</a></td>\n";
+            cout << "<br>\n";
+            cout << name;
+            cout << "<br>\n";
+
             
+
+            ////std::cout << "row: " << id << ", " << value << ", " << size << std::endl;
+
             //cout << "Content-Type: text/html; charset=UTF-8\n\n";
-            std::cout << "row (" << query.getColumn(0) << ", \"" << query.getColumn(1) << "\")" << std::endl;
+
+
+            ////std::cout << "row (" << query.getColumn(0) << ", \"" << query.getColumn(1) << "\")" << std::endl;
 
         }
-
+        db.exec("DROP TABLE test3");
     }
     catch (std::exception& e) {
 
         std::cout << "SQLite exception: " << e.what() << std::endl;
+        
+        //return EXIT_FAILURE;
+    }
 
-        return EXIT_FAILURE;
-    } */
+    
+
     cout << "</body>\n";
     cout << "<footer class = \"footer\" >\n";
         cout << "<div class = \"waves\">\n";
@@ -254,11 +299,11 @@ int main()
         cout << "<li class = \"menu__item\"><a class = \"menu__link\" href = \"/cgi-bin/test.exe\">Admin_test</a></li>\n";
         cout << "</ul>\n";
         cout << "<p style = \"opacity: 0.75;\">Made with 🤍 by peace_akame</p>\n";
-        
         cout << "<style type = \"text/css\">\
         .footer{\
   position: relative;\
-  background: #cdb3d5;\
+  background: linear-gradient(-45deg, #10111F, #1f1f1f);\
+    background-size: 111% 111%;\
   min - height: 100px;\
   padding: 60px 50px;\
   display: flex;\
