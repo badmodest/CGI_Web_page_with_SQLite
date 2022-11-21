@@ -1,16 +1,12 @@
 
 <a name="CGI Web page with SQLite"></a>
-ttps://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
     <img src="/cgi-bin/images/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">CGI Web page with SQLite</h3>
 
   <p align="center">
     project_description
