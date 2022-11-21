@@ -1,0 +1,5 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (info.vcxproj, input.vcxproj, TestSQLite.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  about.cpp
+C:\Users\black\source\repos\about\TestSQLite\about.cpp(83,17): warning C4566: символ, представленный универсальным именем символа "\U0001F90D", невозможно представить в текущей кодовой странице (1251)
+  TestSQLite.vcxproj -> E:\Apache24\cgi-bin\about.exe
