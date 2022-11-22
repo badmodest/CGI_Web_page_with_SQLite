@@ -34,24 +34,32 @@ int main()
     cout << "<body>\n";
     cout << "<style type = \"text/css\">\
     body{\
- background: linear-gradient(-45deg, #10111F, #1f1f1f);\
+ background: linear-gradient(-45deg, #42275a, #734b6d, #8e44ad, #c0392b);\
     background-size: 111% 111%;\
     animation: gradient 15s ease infinite;\
-    font - family: 'Montserrat', sans - serif;\
+    font-family: 'Montserrat', sans-serif;\
     color: #FFF;\
-    line - height: 1.3;\
-    justify - content: center;\
-    text - align: center;\
-    -webkit - font - smoothing: antialiased;\
-    overflow - x: hidden;\
+    line-height: 1.3;\
+    justify-content: center;\
+    text-align: center;\
+    -webkit-font-smoothing: antialiased;\
+    overflow-x: hidden;\
     }\
     a{\
   color: #CCC !important;\
-  text - decoration: none\
+  text-decoration: none\
     }\
-0 % { background - position: 0 % 50 %; }\
-50 % { background - position: 100 % 50 %;}\
-100 % { background - position: 0 % 50 %; }\
+@keyframes gradient {\
+0 % {\
+        background-position: 0 % 50 %;\
+    }\
+    50 % {\
+        background-position: 100 % 50 %;\
+    }\
+    100 % {\
+        background-position: 0 % 50 %;\
+    }\
+}\
 </style>\n";
     cout << "<hr style = \"width: 100%; background-color: #E83951; border-color: #E83951;\">\n";
     cout << "<p style = \"font-family: 'segoe ui', helvetica; font-weight: 15; font-size:32px; align=\"left\" color: black; href = \"/cgi-bin/index.exe\" \">Каталог автозапчастин</p> \n";
@@ -201,8 +209,11 @@ caption{\
         SQLite::Database db("exampl.db", SQLite::OPEN_READONLY);
         //db.exec("DROP TABLE test4");
         //std::cout << "SQLite database file '" << db.getFilename().c_str() << "' opened successfully\n";
+        
         char* user_query = getenv("QUERY_STRING");
-        //SQLite::Statement bind(":user_quer", user_query);
+        string user_query_str = user_query;
+        
+       // SQLite::Statement bind(":user_quer", user_query);
         // 
         // 
         // 
@@ -242,13 +253,14 @@ caption{\
 
 
 
-        SQLite::Statement   query(db, "SELECT * FROM test5 ");
+        SQLite::Statement   query(db, "SELECT * FROM test5 WHERE id ="+user_query_str);
        // std::cout << "SELECT * FROM test5 :\n";
         while (query.executeStep())
         {
 
             int         id = query.getColumn(0);
             const char* name = query.getColumn(1);
+            const char* desc = query.getColumn(2);
             //cout << "<thead>\n";
             //cout << "<tr>\n";
            // cout << "<tdata>\n";
@@ -262,10 +274,14 @@ caption{\
             cout << "</td>\n";
             cout << "<br>";
             cout << "<td>";
-            cout << "<a text-decoration: none; href = \"/cgi-bin/info.exe?";
+            //cout << "<a text-decoration: none; href = \"/cgi-bin/info.exe?";
             cout << id;
             cout << "\">деталi</a></td>\n";
             cout << "</td>\n";
+            cout << "<td>";
+            cout << desc;
+            cout << "</td>\n";
+            cout << "<br>";
             cout << "<br>";
             cout << "</tr>\n";
 
