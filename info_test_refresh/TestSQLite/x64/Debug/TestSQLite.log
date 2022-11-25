@@ -1,6 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (info.vcxproj, TestSQLite.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   info_test.cpp
-C:\Users\black\source\repos\info_test_refresh\TestSQLite\info_test.cpp(378,29): warning C4101: sqlite3_stmt: неиспользованная локальная переменная
-C:\Users\black\source\repos\info_test_refresh\TestSQLite\info_test.cpp(379,13): warning C4101: nb: неиспользованная локальная переменная
+C:\Users\black\source\repos\info_test_refresh\TestSQLite\info_test.cpp(79,29): warning C4101: sqlite3_stmt: неиспользованная локальная переменная
+C:\Users\black\source\repos\info_test_refresh\TestSQLite\info_test.cpp(80,13): warning C4101: nb: неиспользованная локальная переменная
   TestSQLite.vcxproj -> E:\Apache24\cgi-bin\info_test.exe
