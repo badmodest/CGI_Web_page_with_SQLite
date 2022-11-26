@@ -9,6 +9,7 @@
 <h3 align="center">CGI Web page with SQLite</h3>
 
 
+![alt text](https://github.com/badmodest/CGI_Web_page_with_SQLite/blob/main/img1.png?raw=true)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
